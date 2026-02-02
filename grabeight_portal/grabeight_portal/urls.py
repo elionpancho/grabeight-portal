@@ -26,7 +26,7 @@ urlpatterns = [
 
     #Log in url
     path(
-        'login',
+        'login/',
         auth_views.LoginView.as_view(
             template_name="auth/login.html"
         ),

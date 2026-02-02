@@ -4,24 +4,16 @@
     <title>Login | Grabeight Portal</title>
 </head>
 <body>
-
     <h2>Employee Login</h2>
 
-    <!-- Error message kapag mali ang login -->
     {% if form.errors %}
-        <p style="color:red;">
-            Invalid username or password
-        </p>
+        <p style="color:red;">Invalid username or password</p>
     {% endif %}
 
-    <!-- Django login form -->
     <form method="post">
-        {% csrf_token %} <!-- Security token -->
-
-        {{ form.as_p }} <!-- Auto-generated username & password fields -->
-
+        {% csrf_token %}
+        {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
-
 </body>
 </html>
