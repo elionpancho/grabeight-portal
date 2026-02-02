@@ -16,14 +16,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views as core_views
+
+# Built-in Django auth views (login/logout)
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #Log in url
+    path(
+        'login',
+        auth_views.LoginView.as_view(
+            template_name="auth/login.html"
+        ),
+        name='login'
+    ),
+
+# Dashboard(protected)
+    path('', core_views.dashboard, name='dashboard'),
+
+    #Profile Page (protected)
+    path('profile/', core_views.profile, name='profile'),
 ]
 
-from django.urls import path
-from sales.views import test_db
-
-urlpatterns = [
-    path('test-db/', test_db)
-]

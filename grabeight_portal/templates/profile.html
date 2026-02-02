@@ -1,0 +1,9 @@
+<h1>Employee Profile</h1>
+
+<ul>
+    <li>Username: {{ request.user.username }}</li>
+    <li>Email: {{ request.user.email }}</li>
+    <li>Last Login: {{ request.user.last_login }}</li>
+</ul>
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>

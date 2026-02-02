@@ -1,0 +1,11 @@
+<h1>Dashboard</h1>
+
+<!-- Logged-in user -->
+<p>
+    Welcome,
+    <strong>{{ request.user.username }}</strong>
+</p>
+
+<!-- Navigation -->
+<a href="{% url 'profile' %}">Profile</a> |
+<a href="{% url 'logout' %}">Logout</a>
